@@ -64,7 +64,8 @@ module OmniAuth
         end
 
         # work around for local development
-        ip_to_check = [:development, :test].include?(options[:env].to_sym) ? extra[:WmLogin_UserAddress] : request.ip
+        #ip_to_check = [:development, :test].include?(options[:env].to_sym) ? extra[:WmLogin_UserAddress] : request.ip
+        ip_to_check = extra[:WmLogin_UserAddress]
 
         check_req_params = extra.merge({:remote_ip => ip_to_check})
 
